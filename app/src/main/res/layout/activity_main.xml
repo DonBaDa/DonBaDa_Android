@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e9e9e9"
     tools:context="kr.puze.donbada.MainActivity">
 
     <include layout="@layout/actionbar_main"/>
@@ -12,14 +14,26 @@
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabIndicatorHeight="2dp"
         android:id="@+id/tab_layout"
+        android:background="@color/white"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_width="match_parent">
-
     </android.support.design.widget.TabLayout>
+    <View
+        android:background="#d7d7d7"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"/>
+    <View
+        android:background="#e9e9e9"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    <View
+        android:background="#d7d7d7"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"/>
     <android.support.v4.view.ViewPager
         android:id="@+id/main_viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

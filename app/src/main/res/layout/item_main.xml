@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</android.support.constraint.ConstraintLayout>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    xmlns:tools="http://schemas.android.com/tools">
+    <View
+        android:background="#d7d7d7"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"/>
+    <RelativeLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/date"
+            tools:text="2018.01.21"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nanumsquare_r"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/detail"
+            android:layout_alignParentRight="true"
+            tools:text="상세 채무 내역"
+            android:textSize="12dp"
+            android:textColor="#609cff"
+            android:fontFamily="@font/nanumsquare_r"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#d7d7d7"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"/>
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/title"
+        tools:text="생일선물 및 기타 내용"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:fontFamily="@font/nanumsquare_r"/>
+    <RelativeLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/position"
+                tools:text="채무자 : "
+                android:textSize="12dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanumsquare_r"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/name"
+                tools:text="윤영채"
+                android:textSize="11dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanumsquare_r"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/amount"
+            android:layout_alignParentRight="true"
+            tools:text="20000WON"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nanumsquare_r"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:background="#d7d7d7"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"/>
+</LinearLayout>

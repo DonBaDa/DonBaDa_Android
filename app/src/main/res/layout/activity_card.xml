@@ -86,7 +86,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
-                <TextView
+                <EditText
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:id="@+id/account_one"
@@ -101,7 +101,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
-                <TextView
+                <EditText
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:id="@+id/account_two"
@@ -116,7 +116,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
-                <TextView
+                <EditText
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:id="@+id/account_three"
@@ -131,7 +131,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
-                <TextView
+                <EditText
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:id="@+id/account_four"
@@ -155,7 +155,7 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp">
-                <TextView
+                <EditText
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:id="@+id/month"
@@ -168,7 +168,7 @@
                     android:gravity="center"
                     android:layout_width="10dp"
                     android:layout_height="match_parent" />
-                <TextView
+                <EditText
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:id="@+id/year"
@@ -200,7 +200,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="30dp">
-            <TextView
+            <EditText
                 android:id="@+id/password_one"
                 android:textColor="@color/black"
                 android:gravity="center"
@@ -210,7 +210,7 @@
                 android:background="@drawable/text_password"
                 android:layout_width="25dp"
                 android:layout_height="30dp" />
-            <TextView
+            <EditText
                 android:id="@+id/password_two"
                 android:textColor="@color/black"
                 android:gravity="center"

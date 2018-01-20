@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context="kr.puze.donbada.MainActivity">
 
+    <include layout="@layout/actionbar_main"/>
+
+    <android.support.design.widget.TabLayout
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabIndicatorHeight="2dp"
+        android:id="@+id/tab_layout"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="match_parent">
+
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
 </android.support.constraint.ConstraintLayout>

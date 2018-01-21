@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DonBaDa</string>
+    <string name="facebook_app_id">142117489794264</string>
+    <string name="fb_login_protocol_scheme">fb142117489794264</string>
 </resources>

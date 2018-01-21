@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.puze.donbada.Adapter.TabLayoutAdapter
 import kr.puze.donbada.Adapter.ViewPagerAdapter
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         val tabLayout: TabLayoutAdapter = TabLayoutAdapter(getSupportFragmentManager(), tab_layout.getTabCount())
         val viewPagerAdapter: ViewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        tab_layout.addTab(tab_layout.newTab().setText("어장").setTag("debtor"), 0)
-        tab_layout.addTab(tab_layout.newTab().setText("미끼").setTag("creditor"), 0)
+        tab_layout.addTab(tab_layout.newTab().setText("미끼").setTag("debtor"), 0)
+        tab_layout.addTab(tab_layout.newTab().setText("어장").setTag("creditor"), 0)
         tab_layout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         main_viewPager.adapter = tabLayout
@@ -39,5 +40,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        button_float.setOnClickListener {
+            startActivity<AddActivity>()
+        }
     }
 }

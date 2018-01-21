@@ -9,34 +9,40 @@ interface RetrofitService {
 
 
     @GET("/users/fb")
-    fun facebook(@Query("token") token: String): Call<List<Schema.DeviceList>>
+    fun user_facebook(@Query("token") token: String): Call<Schema.User>
 
     @GET("/users/reg")
-    fun register(@Query("token") host_id: String): Call<List<Schema.DeviceList>>
+    fun user_register(@Query("token") host_id: String): Call<Schema.User>
 
     @GET("/users/card")
-    fun card(@Query("id") id: String, @Query("name") name: String, @Query("birth") birth: String, @Query("email") email: String, @Query("phone") phone: String): Call<Schema.DeviceList>
+    fun user_card(@Query("id") id: String, @Query("card_number")card_number: String, @Query("expiry")expiry: String, @Query("birth") email: String, @Query("pw") phone: String): Call<Schema.User>
 
-    @POST("/device")
+    @POST("/room")
     @FormUrlEncoded
-    fun device_register(@Field("host_id") host_id: String, @Field("device_id") device_id: Int, @Field("name") name: String, @Field("description") description: String): Call<Schema.Device>
+    fun room(@Field("creditor") host_id: String, @Field("debtor") device_id: Int, @Field("title") name: String, @Field("D_day") D_day: String, @Field("amount") amount: String): Call<Schema.Room>
 
-    @GET("/gesture")
-    fun gesture_find(@Query("device_id") device_id: Int): Call<List<Schema.Gesture>>
-
-    @POST("/gesture")
+    @POST("/pay")
     @FormUrlEncoded
-    fun gesture_register(@Field("device_id") device_id: Int, @Field("gesture") gesture: String, @Field("act") act: String): Call<Schema.Gesture>
+    fun pay(@Field("id") id: String): Call<Schema.Room>
 
-    @POST("/gesture/act")
+    @POST("/facebook")
     @FormUrlEncoded
-    fun gesture_act(@Field("gesture") gesture: Int): Call<Schema.Gesture>
+    fun facebook(@Field("id") id: Int, @Field("message") message: String, @Field("act") act: String): Call<Schema.User>
 
-    @GET("/host")
-    fun host_find(): Call<List<Schema.Host>>
-
-    @POST("/host")
+    @POST("/gps")
     @FormUrlEncoded
-    fun host_register(@Field("host_id") host_id: String): Call<Schema.Host>
+    fun gps(@Field("id") id: Int, @Field("message") message: String, @Field("act") act: String): Call<Schema.User>
+
+    @POST("/lock")
+    @FormUrlEncoded
+    fun facebook(@Field("id") id: Int): Call<Schema.User>
+
+    @POST("/sound")
+    @FormUrlEncoded
+    fun sound(@Field("id") id: Int): Call<Schema.User>
+
+    @POST("/flash")
+    @FormUrlEncoded
+    fun flash(@Field("id") id: Int): Call<Schema.User>
 
 }

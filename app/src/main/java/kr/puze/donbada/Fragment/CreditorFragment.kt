@@ -21,9 +21,9 @@ import java.util.*
 class CreditorFragment : Fragment() {
     var items: ArrayList<CreditorItem> = ArrayList()
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_creditor, container, false)
-        val adapter = CreditorRecyclerViewAdapter(items, context)
+        val adapter = CreditorRecyclerViewAdapter(items, this!!.context!!)
 
         items.add(CreditorItem("2018.01.20 ", "생일 선물 및 기타 비용", "윤영채", "20000"))
         view.creditor_recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)

@@ -7,11 +7,11 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_debtor.view.*
 import kr.puze.donbada.Adapter.DebtorRecyclerViewAdapter
 import kr.puze.donbada.Data.DebtorItem
 import kr.puze.donbada.R
-import org.jetbrains.anko.support.v4.startActivity
 import java.util.ArrayList
 
 /**
@@ -20,15 +20,24 @@ import java.util.ArrayList
 class DebtorFragment : Fragment() {
     var items: ArrayList<DebtorItem> = ArrayList()
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_debtor, container, false)
-        val adapter = DebtorRecyclerViewAdapter(items, context)
+        val adapter = DebtorRecyclerViewAdapter(items, this!!.context!!)
 
-        items.add(DebtorItem("2018.01.20 ", "생일 선물 및 기타 비용", "윤영채", "20000"))
+        items.add(DebtorItem("2018.01.21 ", "유니세프 후원", "윤영채", "3000"))
         view.debtor_recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         view.debtor_recyclerView.adapter = adapter
         adapter.itemClick = object : DebtorRecyclerViewAdapter.ItemClick {
             override fun onItemClick(view: View?, position: Int) {
+                val dialog = AlertDialog.Builder(context)
+                dialog.setTitle("바다")
+                dialog.setMessage("미끼를 물겠습니다")
+                dialog.setPositiveButton("Ok") { dialog, which ->
+                    Toast.makeText(context, "미끼를 덥석 물었습니다", Toast.LENGTH_LONG).show()
+                    items.removeAt(position)
+                }
+                dialog.setNegativeButton("Cancel") { dialog, which -> dialog.cancel() }
+                dialog.show()
             }
         }
         return view
